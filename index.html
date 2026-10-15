@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Wealth Compass | Private Strategy Session</title>
+  <meta name="description" content="Watch the exclusive wealth roadmap presentation by Your Wealth Compass, powered by Aapka Coach. Learn how to bridge your wealth gap and build a predictable financial fortress.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2307080C' stroke='%23C99A4B' stroke-width='6'/><polygon points='50,18 60,45 50,40' fill='%23C99A4B'/><polygon points='50,82 40,55 50,60' fill='%2394A3B8'/><circle cx='50' cy='50' r='5' fill='%23FFFFFF'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+    
+    <!-- Header: Clean Brand Text & Powered by Aapka Coach -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand-name">YOUR WEALTH <span class="gold-text">COMPASS</span></div>
+        <div class="powered-by">
+          <span class="powered-text">Powered by</span>
+          <a href="https://www.apkacoach.com" target="_blank" rel="noopener noreferrer" class="powered-link" title="Visit Aapka Coach">
+            <img src="assets/apkacoach-logo-dark.png" alt="Aapka Coach Logo" class="powered-logo">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Hero Headline -->
+    <h1 class="hero-headline">
+      How To Bridge Your Wealth Gap & Build A Predictable Financial Fortress
+    </h1>
+    <p class="hero-subheadline">
+      Watch the video below before booking your private 1-on-1 strategy call.
+    </p>
+
+    <!-- VSL Video Player (Locked: Anti-skip scrubbing restriction, Blank initial state, No poster) -->
+    <div class="vsl-container" id="videoContainer">
+      <video 
+        id="vslVideo" 
+        class="vsl-video" 
+        preload="metadata"
+        playsinline
+        webkit-playsinline
+        disablePictureInPicture
+        controlsList="nodownload noplaybackrate noremoteplayback"
+        oncontextmenu="return false;">
+        <!-- VSL Video Stream -->
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Center Play Button Overlay -->
+      <div class="play-overlay" id="playOverlay" aria-label="Play Presentation">
+        <div class="play-btn-circle" title="Play Video">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+
+      <!-- Unmute Button (appears if browser starts audio muted) -->
+      <div class="unmute-btn" id="unmuteBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+        <span>Click to Unmute</span>
+      </div>
+
+      <!-- Locked Minimal Controls Bar -->
+      <div class="vsl-controls" id="vslControls">
+        <!-- Unclickable Locked Progress Indicator -->
+        <div class="vsl-progress-bar" title="Progress indicator">
+          <div class="vsl-progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="controls-row">
+          <div class="controls-left">
+            <button type="button" class="ctrl-btn" id="playPauseBtn" aria-label="Play/Pause">
+              <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="pauseIcon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <div class="vsl-time">
+              <span class="current-time" id="currentTimeDisplay">00:00</span> / <span id="durationDisplay">00:00</span>
+            </div>
+          </div>
+
+          <div class="controls-right">
+            <button type="button" class="ctrl-btn" id="muteBtn" aria-label="Mute/Unmute">
+              <svg id="volHighIcon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+              <svg id="volMuteIcon" viewBox="0 0 24 24" style="display: none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+            </button>
+            <button type="button" class="ctrl-btn" id="fullscreenBtn" aria-label="Fullscreen">
+              <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button Directly Below VSL -->
+    <div class="cta-wrapper">
+      <a href="https://yourwealthcompass.in" id="mainCtaBtn" class="cta-button" target="_blank" rel="noopener">
+        BOOK A CALL
+      </a>
+    </div>
+
+    <!-- Plain Text Details Section (Minimalist Jigarr Shah & Vijay Kaushik Style) -->
+    <div class="details-content">
+      <div class="guarantee-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span>Money-Back Guarantee: 100% Risk-Free</span>
+      </div>
+
+      <h3>How to get started:</h3>
+      <ul class="plain-list">
+        <li>Watch the full video above before booking your call.</li>
+        <li>Book your call above and complete the brief application carefully.</li>
+        <li>We’ll review your application and speak with you personally to determine whether this wealth framework is the right fit for you.</li>
+        <li>If selected, please respect your scheduled time. Missing your confirmed slot without prior notice may permanently disqualify you from future applications.</li>
+        <li>Only 3 application slots are currently available this week. Once filled, applications will close. Book your call now before the opportunity is gone.</li>
+      </ul>
+
+      <p class="contact-text">
+        Have any questions? Write to us directly at <a href="mailto:support@yourwealthcompass.in">support@yourwealthcompass.in</a>
+      </p>
+    </div>
+
+    <!-- Clean Minimal Footer -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <button type="button" class="footer-link-btn" data-modal="privacyModal">Privacy Policy</button>
+        <button type="button" class="footer-link-btn" data-modal="termsModal">Terms & Conditions</button>
+        <button type="button" class="footer-link-btn" data-modal="refundModal">Refund Policy</button>
+      </div>
+
+      <p class="disclaimer-text">
+        DISCLAIMER: Your Wealth Compass does not guarantee any specific financial returns or wealth outcomes. Any client case studies, examples, or figures mentioned in this presentation are for demonstration and educational purposes only and must not be interpreted as promised or expected results. Your financial decisions must be based on your individual risk appetite, timeline, and independent judgment.
+      </p>
+
+      <p class="copyright-text">
+        © 2026 yourwealthcompass.in. All Rights Reserved.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Revised Policy Modals -->
+  <!-- 1. Privacy Policy Modal -->
+  <dialog id="privacyModal" class="policy-dialog" aria-labelledby="privacyTitle">
+    <div class="dialog-header">
+      <h3 id="privacyTitle">Privacy Policy</h3>
+      <button type="button" class="dialog-close" data-close="privacyModal" aria-label="Close dialog">✕</button>
+    </div>
+    <div class="dialog-body">
+      <p>At <strong>Your Wealth Compass</strong> (powered by Aapka Coach), we are committed to upholding strict confidentiality and protecting your personal data.</p>
+      
+      <h4>1. Information We Collect</h4>
+      <p>When you schedule a strategy consultation or submit an application on this page, we collect details you provide voluntarily, including your name, email address, phone number, and self-reported financial questions or objectives.</p>
+
+      <h4>2. How We Use Your Information</h4>
+      <p>Your details are used solely to:</p>
+      <ul>
+        <li>Schedule and confirm your 1-on-1 strategy consultation.</li>
+        <li>Deliver customized financial insights and wealth gap analysis assessments.</li>
+        <li>Communicate important updates regarding your consultation time and resources.</li>
+      </ul>
+
+      <h4>3. Strict Confidentiality & Non-Disclosure</h4>
+      <p>We do not sell, rent, monetize, or disclose your personal data to any third-party advertisers or unauthorized marketing agencies. Your financial circumstances remain strictly confidential between you and our advisory team.</p>
+
+      <h4>4. Security Protocols</h4>
+      <p>We employ modern encryption standards, secure hosting, and access controls to prevent unauthorized access, alteration, or disclosure of your information.</p>
+
+      <h4>5. Contact Us</h4>
+      <p>If you have any questions or wish to update or delete your information, please reach out to us at <a href="mailto:support@yourwealthcompass.in" class="modal-link">support@yourwealthcompass.in</a>.</p>
+    </div>
+  </dialog>
+
+  <!-- 2. Terms & Conditions Modal -->
+  <dialog id="termsModal" class="policy-dialog" aria-labelledby="termsTitle">
+    <div class="dialog-header">
+      <h3 id="termsTitle">Terms & Conditions</h3>
+      <button type="button" class="dialog-close" data-close="termsModal" aria-label="Close dialog">✕</button>
+    </div>
+    <div class="dialog-body">
+      <p>By viewing this presentation, submitting an application, or reserving a strategy session with <strong>Your Wealth Compass</strong>, you acknowledge and agree to the following terms:</p>
+
+      <h4>1. Advisory & Educational Scope</h4>
+      <p>The materials, video content, frameworks, and discussions provided are intended for educational and strategic planning purposes only. They do not constitute formal investment solicitation, guaranteed return promises, or banking advice. Past performance and client illustrations are not indicative of future results.</p>
+
+      <h4>2. Consultation Attendance & Punctuality</h4>
+      <p>Due to the high demand for private consultation sessions and the limited calendar availability of our senior advisors, you agree to attend your scheduled call promptly. If you need to reschedule, you must provide at least 24 hours written notice. Failure to attend without prior notice may result in permanent disqualification from future scheduling.</p>
+
+      <h4>3. Intellectual Property</h4>
+      <p>All video letters, frameworks, visual assets, proprietary blueprints, and copy are the exclusive intellectual property of Your Wealth Compass. Any reproduction, recording, rebroadcasting, or distribution without prior written consent is strictly prohibited.</p>
+
+      <h4>4. Limitation of Liability</h4>
+      <p>Your Wealth Compass and its associates shall not be liable for any direct, indirect, incidental, or consequential financial decisions made by users. Clients retain full responsibility for evaluating their personal financial choices.</p>
+
+      <h4>5. Inquiries</h4>
+      <p>Questions regarding our terms may be sent to <a href="mailto:support@yourwealthcompass.in" class="modal-link">support@yourwealthcompass.in</a>.</p>
+    </div>
+  </dialog>
+
+  <!-- 3. Refund Policy Modal -->
+  <dialog id="refundModal" class="policy-dialog" aria-labelledby="refundTitle">
+    <div class="dialog-header">
+      <h3 id="refundTitle">Refund & Cancellation Policy</h3>
+      <button type="button" class="dialog-close" data-close="refundModal" aria-label="Close dialog">✕</button>
+    </div>
+    <div class="dialog-body">
+      <h4>1. Initial 1-on-1 Strategy Calls</h4>
+      <p>The initial 1-on-1 strategy sessions reserved through this page are <strong>100% complimentary</strong>. There are no upfront fees, hidden booking charges, or financial commitments required to apply for or attend your preliminary consultation.</p>
+
+      <h4>2. Advisory Engagements & Programs</h4>
+      <p>If you are selected and subsequently choose to enroll in an ongoing private advisory, financial coaching, or implementation roadmap, terms and payment schedules will be clearly defined in your customized Client Engagement Agreement before any transaction occurs.</p>
+
+      <h4>3. Money-Back Satisfaction Framework</h4>
+      <p>We stand behind our wealth planning systems. For qualified paid programs carrying our Risk-Free Guarantee, clients who complete all milestone implementation steps and demonstrate full engagement within the qualifying warranty period are eligible for a complete refund as specified in their formal agreement.</p>
+
+      <h4>4. Cancellation Requests</h4>
+      <p>To request a consultation cancellation or inquire about program terms, please contact <a href="mailto:support@yourwealthcompass.in" class="modal-link">support@yourwealthcompass.in</a> with your booking confirmation details.</p>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
