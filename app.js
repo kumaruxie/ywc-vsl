@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const video = document.getElementById('vslVideo');
   const container = document.getElementById('videoContainer');
   const playOverlay = document.getElementById('playOverlay');
-  const unmuteBtn = document.getElementById('unmuteBtn');
   const vslControls = document.getElementById('vslControls');
   const playPauseBtn = document.getElementById('playPauseBtn');
   const playIcon = document.getElementById('playIcon');
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Autoplay policy fallback: try muted
         video.muted = true;
         updateSoundIcons(true);
-        if (unmuteBtn) unmuteBtn.classList.add('show');
         video.play();
       });
     } else {
@@ -71,9 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleMute() {
     video.muted = !video.muted;
     updateSoundIcons(video.muted);
-    if (!video.muted && unmuteBtn) {
-      unmuteBtn.classList.remove('show');
-    }
   }
 
   // Toggle Fullscreen
@@ -194,15 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
     muteBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       toggleMute();
-    });
-  }
-
-  if (unmuteBtn) {
-    unmuteBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      video.muted = false;
-      unmuteBtn.classList.remove('show');
-      updateSoundIcons(false);
     });
   }
 
