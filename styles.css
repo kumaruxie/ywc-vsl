@@ -60,67 +60,81 @@ body {
 }
 
 /* ========================================================================== 
-   HEADER (Centered Brand & Powered by Aapka Coach)
+   HEADER (Jagat Turkiya Horizontal Brand - Clean, No Capsule)
    ========================================================================== */
 .site-header {
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 }
 
 .header-inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   text-align: center;
 }
 
-.brand-name {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--text-main);
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-
-.gold-text {
-  color: var(--accent-gold);
-}
-
-.powered-by {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.powered-text {
-  font-size: 11px;
-  color: var(--text-muted);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  line-height: 1;
-}
-
-.powered-link {
-  display: inline-flex;
-  align-items: center;
+.brand-link {
   text-decoration: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.powered-link:hover {
-  opacity: 0.85;
+.brand-link:hover {
+  opacity: 0.9;
   transform: translateY(-1px);
 }
 
-.powered-logo {
-  height: 22px;
-  width: auto;
-  vertical-align: middle;
-  display: inline-block;
-  object-fit: contain;
+.brand-identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Diamond Emblem */
+.brand-emblem-svg {
+  width: 36px;
+  height: 36px;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.emblem-diamond {
+  fill: none;
+  stroke: var(--accent-gold);
+  stroke-width: 2.6;
+}
+
+.emblem-jt {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 800;
+  fill: #229ED9; /* Authentic Brand Blue, vibrant & crystal clear on dark background */
+  letter-spacing: -0.02em;
+}
+
+/* Horizontal Name */
+.brand-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.brand-jagat {
+  color: #FFFFFF;
+}
+
+.brand-turkiya {
+  color: var(--accent-gold);
 }
 
 /* ========================================================================== 
@@ -397,7 +411,7 @@ body {
 }
 
 /* ========================================================================== 
-   FOOTER (Plain, Simple Links & Disclaimer)
+   FOOTER (Powered by Aapka Coach, Simple Links & Disclaimer)
    ========================================================================== */
 .site-footer {
   border-top: 1px solid var(--border-color);
@@ -405,6 +419,46 @@ body {
   font-size: 13px;
   color: var(--text-dim);
   text-align: center;
+}
+
+.footer-powered-by {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.powered-text {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.powered-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.powered-link:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.footer-powered-logo {
+  height: 22px;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+  object-fit: contain;
 }
 
 .footer-links {
@@ -560,11 +614,16 @@ body {
     padding: 24px 14px 44px;
   }
 
-  .brand-name {
+  .brand-wordmark {
     font-size: 18px;
   }
 
-  .powered-logo {
+  .brand-emblem-svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer-powered-logo {
     height: 19px;
   }
 
