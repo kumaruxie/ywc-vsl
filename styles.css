@@ -48,7 +48,7 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  padding: 32px 18px 60px;
+  padding: 0 18px 60px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -57,16 +57,31 @@ body {
   max-width: 780px;
   margin: 0 auto;
   text-align: center;
+  padding-top: 30px;
 }
 
 /* ========================================================================== 
-   HEADER (Jagat Turkiya Horizontal Brand - Clean, No Capsule)
+   HEADER (Jagat Turkiya Sticky Brand Header - Frosted Glassmorphism)
    ========================================================================== */
 .site-header {
-  margin-bottom: 28px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(7, 8, 12, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 13px 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .header-inner {
+  max-width: 780px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -612,7 +627,15 @@ body {
    ========================================================================== */
 @media (max-width: 640px) {
   body {
-    padding: 24px 14px 44px;
+    padding: 0 14px 44px;
+  }
+
+  .page-wrapper {
+    padding-top: 20px;
+  }
+
+  .site-header {
+    padding: 10px 14px;
   }
 
   .brand-wordmark {
