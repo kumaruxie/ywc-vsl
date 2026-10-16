@@ -691,30 +691,25 @@ body {
   background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
 }
 
-/* Animated Checkmark */
+/* Animated Checkmark (Single clean circle, no double borders) */
 .success-icon-wrap {
-  width: 76px;
-  height: 76px;
+  width: 68px;
+  height: 68px;
   margin: 0 auto 22px;
-  border-radius: 50%;
-  background: rgba(16, 185, 129, 0.1);
-  border: 2px solid rgba(16, 185, 129, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 24px rgba(16, 185, 129, 0.25);
 }
 
 .success-checkmark {
-  width: 44px;
-  height: 44px;
+  width: 62px;
+  height: 62px;
   stroke: var(--accent-green);
-  stroke-width: 3.5;
+  stroke-width: 3.2;
   stroke-miterlimit: 10;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
-  animation: scaleUp 0.35s ease-in-out;
 }
 
 .checkmark-circle {
@@ -722,7 +717,7 @@ body {
   stroke-dashoffset: 166;
   stroke-width: 3;
   stroke: var(--accent-green);
-  fill: none;
+  fill: rgba(16, 185, 129, 0.08);
   animation: strokeCircle 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
 
@@ -745,28 +740,13 @@ body {
   }
 }
 
-@keyframes scaleUp {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.thankyou-pill {
-  display: inline-block;
-  background: rgba(201, 154, 75, 0.12);
-  border: 1px solid rgba(201, 154, 75, 0.3);
-  color: var(--accent-gold);
-  font-size: 12px;
+/* Status kicker (No capsule / No pill) */
+.thankyou-kicker {
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 999px;
+  color: var(--accent-gold);
   margin-bottom: 14px;
 }
 
@@ -787,12 +767,12 @@ body {
   margin: 0 auto 28px;
 }
 
-/* Steps Box */
+/* Next Steps Box (Clean Bullet List, No Numbers) */
 .steps-box {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 24px 20px;
+  padding: 24px 22px;
   text-align: left;
   margin-bottom: 26px;
 }
@@ -803,57 +783,38 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent-gold);
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  margin-bottom: 16px;
 }
 
-.step-item {
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
+  flex-direction: column;
   gap: 14px;
-  align-items: flex-start;
-  margin-bottom: 18px;
 }
 
-.step-item:last-child {
-  margin-bottom: 0;
-}
-
-.step-number {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(201, 154, 75, 0.15);
-  border: 1px solid rgba(201, 154, 75, 0.35);
-  color: var(--accent-gold);
-  font-size: 13px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.step-content {
-  flex: 1;
-}
-
-.step-title {
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 4px;
-}
-
-.step-desc {
-  font-size: 13.5px;
+.steps-list-item {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
-.step-desc strong {
+.steps-list-item::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+}
+
+.steps-list-item strong {
   color: #FFFFFF;
 }
 
