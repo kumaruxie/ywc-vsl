@@ -25,6 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const volMuteIcon = document.getElementById('volMuteIcon');
   const fullscreenBtn = document.getElementById('fullscreenBtn');
 
+  // Scroll to top when clicking header logo
+  const brandLogo = document.querySelector('.site-header .brand-link');
+  if (brandLogo) {
+    brandLogo.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   // ==========================================================================
   // POLICY MODALS (Privacy Policy, Terms & Conditions, Refund Policy)
   // ==========================================================================
