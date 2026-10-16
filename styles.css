@@ -176,7 +176,8 @@ body {
   -webkit-user-select: none;
 }
 
-.vsl-video {
+.vsl-video,
+.vsl-iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -184,7 +185,7 @@ body {
   height: 100%;
   object-fit: cover;
   background: #000000;
-  cursor: pointer;
+  border: none;
 }
 
 /* Center Play Overlay */

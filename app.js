@@ -25,7 +25,73 @@ document.addEventListener('DOMContentLoaded', () => {
   const volMuteIcon = document.getElementById('volMuteIcon');
   const fullscreenBtn = document.getElementById('fullscreenBtn');
 
-  // Guard against missing elements
+  // ==========================================================================
+  // POLICY MODALS (Privacy Policy, Terms & Conditions, Refund Policy)
+  // ==========================================================================
+  const modalTriggers = document.querySelectorAll('[data-modal]');
+  const modalClosers = document.querySelectorAll('[data-close]');
+  const dialogs = document.querySelectorAll('.policy-dialog');
+
+  function openModal(modalId) {
+    const dialog = document.getElementById(modalId);
+    if (!dialog) return;
+
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(dialog) {
+    if (!dialog) return;
+
+    if (typeof dialog.close === 'function') {
+      dialog.close();
+    } else {
+      dialog.removeAttribute('open');
+    }
+    document.body.style.overflow = '';
+  }
+
+  modalTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = trigger.getAttribute('data-modal');
+      openModal(targetId);
+    });
+  });
+
+  modalClosers.forEach((closer) => {
+    closer.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = closer.getAttribute('data-close');
+      const dialog = document.getElementById(targetId);
+      closeModal(dialog);
+    });
+  });
+
+  dialogs.forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog = (
+        rect.top <= e.clientY &&
+        e.clientY <= rect.bottom &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.right
+      );
+      if (!isInDialog) {
+        closeModal(dialog);
+      }
+    });
+
+    dialog.addEventListener('close', () => {
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Guard against missing video element for custom player controls
   if (!video) return;
 
   // Maximum watched progress tracking (Strict Anti-Skip Protection)
@@ -231,73 +297,5 @@ document.addEventListener('DOMContentLoaded', () => {
       // Disallow fast-forwarding keyboard shortcuts
       e.preventDefault();
     }
-  });
-
-  // ==========================================================================
-  // POLICY MODALS (Privacy Policy, Terms & Conditions, Refund Policy)
-  // ==========================================================================
-  const modalTriggers = document.querySelectorAll('[data-modal]');
-  const modalClosers = document.querySelectorAll('[data-close]');
-  const dialogs = document.querySelectorAll('.policy-dialog');
-
-  function openModal(modalId) {
-    const dialog = document.getElementById(modalId);
-    if (!dialog) return;
-
-    if (typeof dialog.showModal === 'function') {
-      dialog.showModal();
-    } else {
-      dialog.setAttribute('open', '');
-    }
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal(dialog) {
-    if (!dialog) return;
-
-    if (typeof dialog.close === 'function') {
-      dialog.close();
-    } else {
-      dialog.removeAttribute('open');
-    }
-    document.body.style.overflow = '';
-  }
-
-  modalTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = trigger.getAttribute('data-modal');
-      openModal(targetId);
-    });
-  });
-
-  modalClosers.forEach((closer) => {
-    closer.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = closer.getAttribute('data-close');
-      const dialog = document.getElementById(targetId);
-      closeModal(dialog);
-    });
-  });
-
-  dialogs.forEach((dialog) => {
-    // Close on backdrop click
-    dialog.addEventListener('click', (e) => {
-      const rect = dialog.getBoundingClientRect();
-      const isInDialog = (
-        rect.top <= e.clientY &&
-        e.clientY <= rect.bottom &&
-        rect.left <= e.clientX &&
-        e.clientX <= rect.right
-      );
-      if (!isInDialog) {
-        closeModal(dialog);
-      }
-    });
-
-    // Close on escape key
-    dialog.addEventListener('close', () => {
-      document.body.style.overflow = '';
-    });
   });
 });
