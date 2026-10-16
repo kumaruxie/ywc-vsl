@@ -94,6 +94,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Guard against missing video element for custom player controls
   if (!video) return;
 
+  // HLS (.m3u8) Support via Hls.js
+  const sourceEl = video.querySelector('source');
+  const streamSrc = video.getAttribute('data-src') || (sourceEl ? sourceEl.getAttribute('src') : video.src);
+
+  if (streamSrc && (streamSrc.includes('.m3u8') || streamSrc.includes('manifest'))) {
+    if (window.Hls && Hls.isSupported()) {
+      const hls = new Hls({ enableWorker: true });
+      hls.loadSource(streamSrc);
+      hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = streamSrc;
+    }
+  }
+
   // Maximum watched progress tracking (Strict Anti-Skip Protection)
   let maxWatchedTime = 0;
   let controlsTimeout = null;
